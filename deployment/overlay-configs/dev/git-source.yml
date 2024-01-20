@@ -1,0 +1,9 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kustom-guestbook
+  namespace: argocd
+spec:
+  source:
+    targetRevision: dev
+

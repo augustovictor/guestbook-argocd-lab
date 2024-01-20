@@ -16,7 +16,6 @@ endif
 badd +397 ~/.config/nvim/init.vim
 badd +37 ~/IdeaProjects/personal/pipelines/components/great-expectations/validate/CSV/component.py
 badd +4 deployment/base-configs/kustomization.yml
-badd +1 deployment/base-configs/ns.yml
 badd +7 deployment/base-configs/app.yml
 badd +2 Makefile
 badd +7 deployment/overlay-configs/dev/kustomization.yml
@@ -24,7 +23,7 @@ badd +8 deployment/overlay-configs/dev/git-source.yml
 argglobal
 %argdel
 $argadd NvimTree_1
-edit deployment/overlay-configs/dev/kustomization.yml
+edit deployment/base-configs/kustomization.yml
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -57,7 +56,6 @@ setlocal nofen
 lcd ~/projects/personal/guestbook-argocd-lab
 wincmd w
 argglobal
-balt ~/projects/personal/guestbook-argocd-lab/deployment/overlay-configs/dev/git-source.yml
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -68,12 +66,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 7 - ((6 * winheight(0) + 15) / 31)
+let s:l = 4 - ((3 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 7
-normal! 016|
+keepjumps 4
+normal! 010|
 lcd ~/projects/personal/guestbook-argocd-lab
 wincmd w
 2wincmd w

@@ -1,0 +1,17 @@
+apiVersion: v2
+type: application
+
+name: sample-app-helm
+description: Sample app to practice custom helm charts
+appVersion: 0.0.1
+
+version: 0.1.0
+
+keywords:
+  - sample-app-helm
+  - guestbook
+
+home: https://github.com/augustovictor/argocd-example-apps/tree/master/helm-guestbook
+maintainers:
+  - name: Victor Costa
+    url: https://github.com/augustovictor

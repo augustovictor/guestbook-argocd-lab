@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: sample-app-helm
+  labels:
+    app: sample-app-helm
+    app.kubernetes.io/version: "{{.Release.Name}}-{{.Release.Revision}}"
+
+spec:
+  replicas: {{.Values.replicaCount}}
+  selector:
+    matchLabels:
+      app: sample-app-helm
+  template:
+    metadata:
+      labels:
+        app: sample-app-helm
+    spec:
+      containers:
+        - name: sample-app-helm
+          image: "{{.Values.image.repository}}:{{.Values.image.tag}}"
+          ports:
+            - containerPort: 80
+
